@@ -10,6 +10,9 @@ if [ -z ${IP} ]; then
     exit
 fi
 
+USERNAME=cisco
+PASSWORD=XXXXXXPASSWORDXXXXXX
+
 USERAGENT="'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36'"
 
 # Referer line
@@ -18,7 +21,7 @@ REF="'http://${IP}/cs34055c2b/config/log_off_page.htm'"
 INITIALCOOKIE="'cisco_numberOfEntriesPerPage=50; pg=00000000000000000000000000000000000000000000000000000000000; isStackableDevice=false; userStatus=ok; activeLangId=English; firstWelcomeBanner=false'"
 
 # Unencrypted login line. Encrypted uses some long convoluted RSA encryption scheme written in Javascript. I tried for hours to parse it but couldn't figure it out. Maybe another set of eyes will have better luck.
-LOGIN="'http://${IP}/cs34055c2b/config/System.xml?action=login&user=cisco&password=XXXXXXXXXXXXXXXXXXXXXXXX&ssd=true&'"
+LOGIN="'http://${IP}/cs34055c2b/config/System.xml?action=login&user=${USERNAME}&password=${PASSWORD}&ssd=true&'"
 
 # Get the headers for the session so we can parse the output and build our real session string
 SESSION=$(eval curl -i -s -k -b ${INITIALCOOKIE} -A ${USERAGENT} -e ${REF} ${LOGIN} | grep "sessionID")
