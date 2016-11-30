@@ -1,6 +1,7 @@
 #!/bin/bash
 # For: Cisco Small Business SG200 26/50 port switch
 # v.0.0.1 09/29/2014
+# v.0.0.2 09/30/2016
 
 # Show help if first argv does not exist
 IP=$1
