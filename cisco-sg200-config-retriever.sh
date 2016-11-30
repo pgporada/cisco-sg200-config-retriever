@@ -34,7 +34,8 @@ MYCOOKIE="'cisco_numberOfEntriesPerPage=50; pg=000000000000000000000000000000000
 REF="'http://${IP}/cs34055c2b/FileMgmt/maintenance_file_fileUpload_m.htm'"
 
 # The rl options here get me an http download of the running config from the switch to my machine
-DLURL="'http://${IP}/cs34055c2b/FileMgmt/stupCfg.ber?rlCopyFreeHistoryIndex=94&&rlCopyDestinationFileType=2&&rlCopyOptionsRequestedSsdAccess=3&&redirect=/device/copyfiles.xml'"
+INDEX=$(date +%H%M%S)
+DLURL="'http://${IP}/cs34055c2b/FileMgmt/stupCfg.ber?rlCopyFreeHistoryIndex=${INDEX}&&rlCopyDestinationFileType=2&&rlCopyOptionsRequestedSsdAccess=3&&redirect=/device/copyfiles.xml'"
 
 TSTAMP=$(date +%Y%m%d-%H%M%S)
 FILENAME=${IP}-${TSTAMP}-running-config.txt
