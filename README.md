@@ -9,7 +9,7 @@ Use this script at your own risk.
 - - - -
 # Usage
 
-You will need to edit the script to put in a username/password on the *LOGIN=* line.
+You will need to edit the script to put in a username/password on the **LOGIN=** line.
 
 !!! WARNING !!! This line will be sent unencrypted over the wire as it's using http and not https.
 
